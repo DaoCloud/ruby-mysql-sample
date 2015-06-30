@@ -25,9 +25,6 @@ class Storage
   end
 
   def score
-    r = @db.query("SELECT * FROM scores")
-    first = r.each_hash[0]
-    puts 11
-    f['scores']
+    @db.query("SELECT * FROM scores").first['score']
   end
 end
