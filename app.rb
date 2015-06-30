@@ -5,7 +5,7 @@ get '/' do
   storage = Storage.new
   storage.populate()
   score = storage.score()
-  print "Hello world, %d!" % score
+  "Hello world, %d!" % score
 end
 
 class Storage
@@ -27,6 +27,7 @@ class Storage
   def score
     r = @db.query("SELECT * FROM scores")
     first = r.each_hash[0]
-    print "#{f['scores']}"
+    puts 11
+    f['scores']
   end
 end
