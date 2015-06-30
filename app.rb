@@ -8,12 +8,6 @@ get '/' do
   "Hello world, %d!" % score
 end
 
-      user   = os.getenv('MYSQL_USERNAME'),
-      passwd = os.getenv('MYSQL_PASSWORD'),
-      db     = os.getenv('MYSQL_INSTANCE_NAME'),
-      host   = os.getenv('MYSQL_PORT_3306_TCP_ADDR'),
-      port   = int(os.getenv('MYSQL_PORT_3306_TCP_PORT'))
-
 class Storage
   def initialize()
     @db = Mysql2::Client.new(
