@@ -1,6 +1,14 @@
 require 'sinatra'
 require 'mysql2'
 
+module Sinatra
+  class Base
+    set :server, %w[thin mongrel webrick]
+    set :bind, '0.0.0.0'
+    set :port, 4567
+  end
+end
+
 get '/' do
   storage = Storage.new
   storage.populate()
