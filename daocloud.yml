@@ -1,0 +1,13 @@
+image: daocloud/ci-ruby:2.0.0
+
+services:
+  - mysql
+
+env:
+  - MYSQL_USERNAME="root"
+  - MYSQL_PASSWORD=""
+  - MYSQL_INSTANCE_NAME="test"
+
+script:
+  - bundle install
+  - rspec app_rspec.rb
